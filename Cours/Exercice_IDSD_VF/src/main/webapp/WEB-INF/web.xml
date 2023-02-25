@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>Exercice_IDSD first servlet with IDSD</display-name>
+  <!--
+  <servlet>
+  	<servlet-name> first </servlet-name>
+	<servlet-class> project.First_Servlet</servlet-class>
+	<load-on-startup> -2 </load-on-startup>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name> first </servlet-name>
+  	<url-pattern>/ww/xx/login</url-pattern>
+  </servlet-mapping>
+  -->
+  <servlet>  
+	<servlet-name>second</servlet-name>
+	<servlet-class>project.CycleVie</servlet-class>
+	<load-on-startup> 2 </load-on-startup>  
+  </servlet>  
+	  
+  <servlet-mapping>  
+	<servlet-name>second</servlet-name>  
+	<url-pattern>/CycleVie</url-pattern>  
+  </servlet-mapping>  
+
+  <context-param> 
+  	<param-name> DataBase_URL </param-name>
+  	<param-value> jdbc:mysql://localhost:3306/IDSD </param-value>
+  </context-param>
+  
+  <listener>
+  	<description> un listeneur web </description>
+  	<listener-class>project.MyServletContextListener </listener-class>
+  </listener>
+  
+  <session-config>
+  	<session-timeout>1</session-timeout>
+  </session-config>
+  
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>    
+  </welcome-file-list>
+</web-app>
